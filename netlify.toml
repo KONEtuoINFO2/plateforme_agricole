@@ -1,0 +1,8 @@
+[build]
+  publish = "public"
+  command = "composer install && npm install && npm run build && php artisan optimize"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
