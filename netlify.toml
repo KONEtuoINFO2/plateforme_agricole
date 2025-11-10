@@ -1,8 +1,8 @@
 [build]
-  publish = "public/build"
-  command = "npm run build"
+  base = "backend"
+  publish = "public"
+  command = "composer install --no-interaction --prefer-dist --optimize-autoloader && npm install && npm run build || true"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.php"
-  status = 200
+[build.environment]
+  NODE_VERSION = "18"
+  PHP_VERSION = "8.2"
